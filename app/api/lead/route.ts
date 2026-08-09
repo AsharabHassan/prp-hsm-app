@@ -52,6 +52,16 @@ export async function POST(request: Request) {
     hair_quality_summary: analysis.hairQuality.summary,
     report_summary: analysis.personalizedNarrative,
     photo_url: photoUrl,
+    // Meta Conversions API fields — same event_id as the browser pixel's
+    // Lead event so Meta deduplicates browser + server events.
+    meta_pixel_id: process.env.NEXT_PUBLIC_META_PIXEL_ID || "",
+    meta_event_name: "Lead",
+    meta_event_id: lead.metaEventId || "",
+    fbp: lead.fbp || "",
+    fbc: lead.fbc || "",
+    client_ip_address:
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "",
+    client_user_agent: request.headers.get("user-agent") || "",
   };
 
   // 2) Deliver the lead to GoHighLevel. If no webhook is configured yet,

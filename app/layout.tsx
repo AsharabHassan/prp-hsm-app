@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
+import MetaPixel from "@/components/MetaPixel";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -45,6 +46,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${playfair.variable} min-h-dvh antialiased`}
       >
+        <MetaPixel />
         {children}
       </body>
     </html>

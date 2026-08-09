@@ -77,6 +77,11 @@ export const LeadSchema = z.object({
   analysis: AnalysisResult,
   photoDataUrl: z.string().startsWith("data:image/"),
   sourceUrl: z.string(),
+  // Meta attribution: browser pixel fires Lead with this same eventID so
+  // GHL's Conversions API event deduplicates against it.
+  metaEventId: z.string().optional(),
+  fbp: z.string().optional(),
+  fbc: z.string().optional(),
 });
 
 export type LeadT = z.infer<typeof LeadSchema>;

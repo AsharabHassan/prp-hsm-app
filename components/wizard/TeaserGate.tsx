@@ -28,6 +28,15 @@ export default function TeaserGate({
     setSubmitting(true);
     setError("");
     try {
+      // One event ID shared by the browser pixel and the GHL webhook so
+      // Meta deduplicates the browser and server (CAPI) Lead events.
+      const metaEventId =
+        typeof crypto !== "undefined" && "randomUUID" in crypto
+          ? crypto.randomUUID()
+          : `lead-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+      const cookie = (name: string) =>
+        document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`))?.[1];
+
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -41,12 +50,30 @@ export default function TeaserGate({
           analysis,
           photoDataUrl,
           sourceUrl: window.location.href,
+          metaEventId,
+          fbp: cookie("_fbp"),
+          fbc: cookie("_fbc"),
         }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => null);
         throw new Error(data?.error || "Something went wrong. Please try again.");
       }
+
+      // Browser-side Meta Lead event with the shared eventID.
+      const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq;
+      if (fbq) {
+        fbq(
+          "track",
+          "Lead",
+          {
+            content_name: "hair-analysis-report",
+            content_category: analysis.candidacy,
+          },
+          { eventID: metaEventId }
+        );
+      }
+
       onUnlocked(location);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
