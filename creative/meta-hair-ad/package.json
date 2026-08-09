@@ -1,0 +1,45 @@
+{
+  "name": "meta-hair-ad",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@remotion/captions": "4.0.507",
+    "@remotion/cli": "4.0.507",
+    "@remotion/google-fonts": "4.0.507",
+    "@remotion/media": "4.0.507",
+    "@remotion/tailwind-v4": "4.0.507",
+    "@remotion/transitions": "4.0.507",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.507",
+    "tailwindcss": "4.0.0"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.507",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.19.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "render:preview": "remotion render NotBaldNotTooEarly out/not-bald-not-too-early-preview.mp4",
+    "render:final": "remotion render NotBaldNotTooEarlyWithVO out/not-bald-not-too-early-final.mp4",
+    "render:conversion30": "remotion render HairAnalysisConversion30 out/hair-analysis-conversion-30.mp4",
+    "render:15:check": "remotion render HairAnalysis15CheckTheChange out/hair-analysis-15-check-the-change.mp4 --codec=h264 --crf=16 --audio-codec=aac",
+    "render:15:guesswork": "remotion render HairAnalysis15NoGuesswork out/hair-analysis-15-no-guesswork.mp4 --codec=h264 --crf=16 --audio-codec=aac",
+    "render:15:clarity": "remotion render HairAnalysis15ClarityFirst out/hair-analysis-15-clarity-first.mp4 --codec=h264 --crf=16 --audio-codec=aac",
+    "render:15:howto": "remotion render HairAnalysis15HowItWorks out/hair-analysis-15-how-it-works.mp4 --codec=h264 --crf=16 --audio-codec=aac",
+    "voiceover": "node scripts/generate-voiceover.mjs",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
+}

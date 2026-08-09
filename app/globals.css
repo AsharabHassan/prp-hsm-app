@@ -1,26 +1,573 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-gold: #c7a35c;
+  --color-gold-light: #ead7a7;
+  --color-gold-dark: #9f7c3b;
+  --color-black-rich: #060606;
+  --color-black-soft: #10100f;
+  --color-ink: #f2f0eb;
+  --color-muted: #999792;
+  --color-line: rgba(199, 163, 92, 0.22);
+
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background: var(--color-black-rich);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-width: 320px;
+  background: var(--color-black-rich);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+}
+
+::selection {
+  background: rgba(199, 163, 92, 0.3);
+  color: white;
+}
+
+a,
+button,
+input,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+.section-space {
+  padding-top: clamp(5rem, 10vw, 9rem);
+  padding-bottom: clamp(5rem, 10vw, 9rem);
+}
+
+.eyebrow {
+  color: var(--color-gold);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4.75rem);
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+.section-copy {
+  color: var(--color-muted);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.hero-section {
+  isolation: isolate;
+  min-height: calc(100svh - 72px);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-scrim {
+  background:
+    linear-gradient(90deg, rgba(6, 6, 6, 0.98) 0%, rgba(6, 6, 6, 0.88) 34%, rgba(6, 6, 6, 0.32) 68%, rgba(6, 6, 6, 0.12) 100%),
+    linear-gradient(0deg, rgba(6, 6, 6, 0.72) 0%, transparent 42%);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.hero-section::after {
+  background: linear-gradient(90deg, transparent, rgba(199, 163, 92, 0.7), transparent);
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 45%;
+  z-index: 2;
+}
+
+.hero-index {
+  bottom: 2rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: var(--font-serif);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  position: absolute;
+  right: 2rem;
+  z-index: 2;
+}
+
+.primary-cta {
+  align-items: center;
+  background: linear-gradient(120deg, #e4ca8b, #bd9446);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  box-shadow: 0 14px 45px rgba(165, 120, 44, 0.2);
+  color: #090806;
+  display: inline-flex;
+  font-size: 0.68rem;
+  font-weight: 700;
+  gap: 0.8rem;
+  justify-content: center;
+  letter-spacing: 0.15em;
+  padding: 1.05rem 1.6rem;
+  text-transform: uppercase;
+  transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+
+.primary-cta:hover {
+  box-shadow: 0 18px 55px rgba(199, 163, 92, 0.32);
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.text-link {
+  align-items: center;
+  border-bottom: 1px solid rgba(199, 163, 92, 0.35);
+  color: var(--color-gold-light);
+  display: inline-flex;
+  font-size: 0.66rem;
+  font-weight: 600;
+  gap: 0.5rem;
+  letter-spacing: 0.15em;
+  padding-bottom: 0.35rem;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.text-link:hover {
+  border-color: var(--color-gold);
+  color: white;
+}
+
+.process-card {
+  background: #0d0d0c;
+  min-height: 350px;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  transition: background-color 300ms ease;
+}
+
+.process-card:hover {
+  background: #13120f;
+}
+
+.comparison-shell {
+  min-width: 0;
+}
+
+.comparison-image {
+  aspect-ratio: 16 / 10;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.75rem;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.comparison-image::after {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), transparent 30%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.comparison-label {
+  background: rgba(5, 5, 5, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: white;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  padding: 0.55rem 0.8rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 1rem;
+  z-index: 5;
+}
+
+.comparison-divider {
+  background: rgba(255, 255, 255, 0.8);
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 1px;
+  z-index: 4;
+}
+
+.comparison-handle {
+  align-items: center;
+  background: var(--color-gold);
+  border: 4px solid #070707;
+  border-radius: 999px;
+  box-shadow: 0 0 30px rgba(199, 163, 92, 0.45);
+  color: #080706;
+  display: flex;
+  height: 3.25rem;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.25rem;
+}
+
+.comparison-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: col-resize;
+  height: 100%;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.comparison-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 72px;
+  width: 72px;
+}
+
+.comparison-range::-moz-range-thumb {
+  border: 0;
+  height: 72px;
+  width: 72px;
+}
+
+.treatment-note {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.treatment-note:hover {
+  border-color: rgba(199, 163, 92, 0.35);
+  transform: translateY(-3px);
+}
+
+.price-card {
+  align-items: center;
+  background: linear-gradient(145deg, #11110f, #0a0a0a);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.faq-item summary {
+  align-items: center;
+  color: var(--color-ink);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  justify-content: space-between;
+  list-style: none;
+  padding: 1.5rem 0;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  max-width: 42rem;
+  padding: 0 3rem 1.5rem 0;
+}
+
+.faq-plus {
+  color: var(--color-gold);
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: transform 250ms ease;
+}
+
+.faq-item[open] .faq-plus {
+  transform: rotate(45deg);
+}
+
+.final-cta {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(199, 163, 92, 0.16), transparent 34%),
+    radial-gradient(circle at 90% 80%, rgba(199, 163, 92, 0.08), transparent 32%),
+    linear-gradient(145deg, #15130f, #080808 62%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 35px 100px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+.final-cta::before {
+  border: 1px solid rgba(199, 163, 92, 0.12);
+  border-radius: 999px;
+  content: "";
+  height: 28rem;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 28rem;
+}
+
+/* Animated gold shine — ported from the HSA main site */
+.text-gradient-gold {
+  background: linear-gradient(to right, #d4af37, #f4e4c1, #d4af37);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.luxury-glow {
+  box-shadow: 0 0 28px rgba(199, 163, 92, 0.35);
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Signature: diagnostic scan line sweeping over the photo during analysis */
+.scan-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #f4e4c1 30%,
+    #d4af37 50%,
+    #f4e4c1 70%,
+    transparent
+  );
+  box-shadow: 0 0 24px 6px rgba(212, 175, 55, 0.45);
+  animation: scan 2.6s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0%,
+  100% {
+    top: 8%;
+  }
+  50% {
+    top: 88%;
+  }
+}
+
+/* Pulsing halo for photo-map markers */
+.marker-dot {
+  position: relative;
+}
+
+.marker-dot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  animation: markerPulse 2s ease-out infinite;
+}
+
+@keyframes markerPulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Slow pulse for the analyzing status text */
+.pulse-soft {
+  animation: pulseSoft 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .text-gradient-gold,
+  .scan-line,
+  .fade-in-up,
+  .pulse-soft {
+    animation: none;
+  }
+
+  .marker-dot::after {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
+@media (min-width: 640px) {
+  .price-card {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-scrim {
+    background:
+      linear-gradient(90deg, rgba(6, 6, 6, 0.96) 0%, rgba(6, 6, 6, 0.78) 58%, rgba(6, 6, 6, 0.38) 100%),
+      linear-gradient(0deg, rgba(6, 6, 6, 0.9) 0%, transparent 55%);
+  }
+
+  .hero-section::after {
+    width: 75%;
+  }
+
+  .hero-index {
+    display: none;
+  }
+
+  .process-card {
+    min-height: 290px;
+  }
+
+  .comparison-image {
+    aspect-ratio: 4 / 3;
+    border-radius: 1.25rem;
+  }
+
+  .comparison-label {
+    font-size: 0.5rem;
+    padding: 0.45rem 0.65rem;
+  }
+}
+
+/* Cinematic reviews — spotlight quote stage */
+.review-stage {
+  isolation: isolate;
+}
+
+.review-ghost {
+  color: rgba(199, 163, 92, 0.07);
+  font-family: var(--font-serif);
+  font-size: clamp(16rem, 30vw, 26rem);
+  left: -0.06em;
+  line-height: 1;
+  pointer-events: none;
+  position: absolute;
+  top: -0.12em;
+  user-select: none;
+  z-index: 0;
+}
+
+.review-enter {
+  animation: reviewEnter 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes reviewEnter {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.review-progress {
+  animation-name: reviewProgress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  width: 100%;
+  transform-origin: left;
+}
+
+@keyframes reviewProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-enter {
+    animation: none;
+  }
+
+  .review-progress {
+    animation: none;
+    transform: scaleX(1);
+  }
 }
