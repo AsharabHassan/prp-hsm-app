@@ -37,6 +37,21 @@ export default function TeaserGate({
       const cookie = (name: string) =>
         document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`))?.[1];
 
+      // Fire the browser Lead event at the moment of form submission, with
+      // the shared eventID for CAPI deduplication.
+      const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq;
+      if (fbq) {
+        fbq(
+          "track",
+          "Lead",
+          {
+            content_name: "hair-analysis-report",
+            content_category: analysis.candidacy,
+          },
+          { eventID: metaEventId }
+        );
+      }
+
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -58,20 +73,6 @@ export default function TeaserGate({
       if (!res.ok) {
         const data = await res.json().catch(() => null);
         throw new Error(data?.error || "Something went wrong. Please try again.");
-      }
-
-      // Browser-side Meta Lead event with the shared eventID.
-      const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq;
-      if (fbq) {
-        fbq(
-          "track",
-          "Lead",
-          {
-            content_name: "hair-analysis-report",
-            content_category: analysis.candidacy,
-          },
-          { eventID: metaEventId }
-        );
       }
 
       onUnlocked(location);
