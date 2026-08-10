@@ -80,7 +80,7 @@ const AnalysisHookScene: React.FC = () => {
           transform: `translateY(${interpolate(enter, [0, 1], [36, 0], clamp)}px)`,
         }}
       >
-        <SectionLabel>HSA / Free hair analysis</SectionLabel>
+        <SectionLabel>HSW / Free hair analysis</SectionLabel>
         <div
           style={{
             marginTop: 34,
@@ -866,7 +866,7 @@ const AnalysisCtaScene: React.FC = () => {
         }}
       >
         <Img
-          src={staticFile("brand/hsa-logo.png")}
+          src={staticFile("brand/hsw-logo.png")}
           style={{width: 132, height: 132, objectFit: "contain"}}
         />
         <div
@@ -936,13 +936,13 @@ const AnalysisCtaScene: React.FC = () => {
             marginTop: 27,
             color: palette.muted,
             fontFamily: sans,
-            fontSize: 17,
+            fontSize: 15,
             fontWeight: 800,
-            letterSpacing: 4,
+            letterSpacing: 2.4,
             textTransform: "uppercase",
           }}
         >
-          Private to start / HSA
+          Harley Street Medical Wellness
         </div>
       </div>
     </AbsoluteFill>
@@ -1005,7 +1005,7 @@ const ProgressRail: React.FC = () => {
           textShadow: "0 2px 12px rgba(0,0,0,.9)",
         }}
       >
-        <span>HSA / How it works</span>
+        <span>HSW / How it works</span>
         <span>{step}</span>
       </div>
       <div

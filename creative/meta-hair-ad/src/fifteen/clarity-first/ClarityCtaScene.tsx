@@ -31,7 +31,7 @@ export const ClarityCtaScene: React.FC = () => {
   return (
     <AbsoluteFill style={{background: palette.black, overflow: "hidden"}}>
       <Img
-        src={staticFile("brand/clinic-reception.webp")}
+        src={staticFile("brand/wellness-clinic.webp")}
         style={{
           width: "100%",
           height: "100%",
@@ -69,7 +69,7 @@ export const ClarityCtaScene: React.FC = () => {
         }}
       >
         <Img
-          src={staticFile("brand/hsa-logo.png")}
+          src={staticFile("brand/hsw-logo.png")}
           style={{width: 142, height: 142, objectFit: "contain"}}
         />
         <div
@@ -139,13 +139,13 @@ export const ClarityCtaScene: React.FC = () => {
             marginTop: 29,
             color: palette.muted,
             fontFamily: sans,
-            fontSize: 18,
+            fontSize: 16,
             fontWeight: 700,
-            letterSpacing: 4,
+            letterSpacing: 2.4,
             textTransform: "uppercase",
           }}
         >
-          HSA / London &amp; Glasgow
+          Harley Street Medical Wellness / London &amp; Glasgow
         </div>
       </div>
     </AbsoluteFill>

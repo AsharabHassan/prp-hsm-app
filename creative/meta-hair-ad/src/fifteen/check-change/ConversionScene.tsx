@@ -137,7 +137,7 @@ export const CheckChangeConversionScene: React.FC = () => {
         }}
       >
         <Img
-          src={staticFile("brand/hsa-logo.png")}
+          src={staticFile("brand/hsw-logo.png")}
           style={{width: 138, height: 138, objectFit: "contain"}}
         />
         <div
@@ -208,7 +208,7 @@ export const CheckChangeConversionScene: React.FC = () => {
             textTransform: "uppercase",
           }}
         >
-          Harley Street Aesthetics / London &amp; Glasgow
+          Harley Street Medical Wellness / London &amp; Glasgow
         </div>
       </div>
 

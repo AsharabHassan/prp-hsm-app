@@ -46,7 +46,7 @@ export const TreatmentScene: React.FC = () => {
           textTransform: "uppercase",
         }}
       >
-        Clinician-led scalp treatment · Harley Street Medics
+        Clinician-led scalp treatment · HSW
       </div>
       <ScanHud label="REAL CLINIC / REAL TREATMENT" />
       <div

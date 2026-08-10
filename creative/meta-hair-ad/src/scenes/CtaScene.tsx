@@ -12,7 +12,7 @@ export const CtaScene: React.FC = () => {
   return (
     <AbsoluteFill style={{backgroundColor: palette.black, overflow: "hidden"}}>
       <Img
-        src={staticFile("brand/clinic-reception.webp")}
+        src={staticFile("brand/wellness-clinic.webp")}
         style={{
           width: "100%",
           height: "100%",
@@ -41,7 +41,7 @@ export const CtaScene: React.FC = () => {
           opacity: enter,
         }}
       >
-        <Img src={staticFile("brand/hsa-logo.png")} style={{width: 195, height: 195, objectFit: "contain", marginBottom: 48}} />
+        <Img src={staticFile("brand/hsw-logo.png")} style={{width: 195, height: 195, objectFit: "contain", marginBottom: 48}} />
         <div style={{fontFamily: sans, fontSize: 20, letterSpacing: 7, textTransform: "uppercase", color: palette.goldLight, fontWeight: 700}}>
           Free · private · 60 seconds
         </div>
@@ -84,7 +84,7 @@ export const CtaScene: React.FC = () => {
           />
         </div>
         <div style={{fontFamily: sans, fontSize: 18, letterSpacing: 3, marginTop: 34, textTransform: "uppercase", color: palette.muted}}>
-          Harley Street Medics · London & Glasgow
+          Harley Street Medical Wellness · London &amp; Glasgow
         </div>
       </div>
       <FilmTexture />

@@ -5,6 +5,7 @@ import {CheckTheChange15} from "./fifteen/check-change/CheckTheChange15";
 import {NoGuesswork15} from "./fifteen/no-guesswork/NoGuesswork15";
 import {ClarityFirst15} from "./fifteen/clarity-first/ClarityFirst15";
 import {AnalysisHowTo15} from "./fifteen/analysis-howto/AnalysisHowTo15";
+import {HairAnalysisReportScrollCapture} from "./capture/HairAnalysisReportScrollCapture";
 
 export type MetaHairAdProps = {
   voiceoverReady: boolean;
@@ -70,6 +71,14 @@ export const MyComposition: React.FC = () => {
         fps={30}
         width={1080}
         height={1920}
+      />
+      <Composition
+        id="HairAnalysisReportScrollCapture"
+        component={HairAnalysisReportScrollCapture}
+        durationInFrames={150}
+        fps={30}
+        width={376}
+        height={812}
       />
     </>
   );

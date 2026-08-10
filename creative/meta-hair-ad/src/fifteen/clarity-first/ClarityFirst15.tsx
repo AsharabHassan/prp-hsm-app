@@ -85,7 +85,7 @@ const ProgressRail: React.FC = () => {
           textShadow: "0 2px 12px rgba(0,0,0,.9)",
         }}
       >
-        <span>HSA / Free hair analysis</span>
+        <span>HSW / Free hair analysis</span>
         <span>15 sec</span>
       </div>
       <div

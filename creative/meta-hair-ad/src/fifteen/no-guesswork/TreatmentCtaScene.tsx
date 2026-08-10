@@ -20,7 +20,7 @@ export const TreatmentCtaScene: React.FC = () => {
   return (
     <AbsoluteFill style={{backgroundColor: palette.black, overflow: "hidden"}}>
       <Img
-        src={staticFile("brand/clinic-reception.webp")}
+        src={staticFile("brand/wellness-clinic.webp")}
         style={{
           width: "100%",
           height: "100%",
@@ -46,7 +46,7 @@ export const TreatmentCtaScene: React.FC = () => {
           left: 66,
           right: 66,
           top: 105,
-          bottom: 250,
+          bottom: 330,
           border: "1px solid rgba(199,163,92,.42)",
           background: "rgba(0,0,0,.53)",
           backdropFilter: "blur(13px)",
@@ -55,7 +55,7 @@ export const TreatmentCtaScene: React.FC = () => {
           scale: interpolate(enter, [0, 1], [0.95, 1]),
         }}
       >
-        <Img src={staticFile("brand/hsa-logo.png")} style={{width: 125, height: 125, objectFit: "contain"}} />
+        <Img src={staticFile("brand/hsw-logo.png")} style={{width: 125, height: 125, objectFit: "contain"}} />
         <div style={{display: "flex", gap: 13, marginTop: 36}}>
           <div style={{padding: "13px 19px", border: "1px solid rgba(199,163,92,.5)", color: palette.goldLight, fontFamily: sans, fontSize: 19, letterSpacing: 4, fontWeight: 800}}>PRP</div>
           <div style={{padding: "13px 19px", border: "1px solid rgba(100,233,255,.44)", color: palette.cyan, fontFamily: sans, fontSize: 19, letterSpacing: 3, fontWeight: 800}}>EXOSOMES</div>
@@ -89,6 +89,20 @@ export const TreatmentCtaScene: React.FC = () => {
         >
           Analyse free now →
           <div style={{position: "absolute", top: -40, bottom: -40, left: `${sheen}%`, width: 90, background: "rgba(255,255,255,.48)", rotate: "12deg", filter: "blur(9px)"}} />
+        </div>
+        <div
+          style={{
+            marginTop: 26,
+            color: palette.muted,
+            fontFamily: sans,
+            fontSize: 16,
+            fontWeight: 700,
+            letterSpacing: 2.4,
+            textAlign: "center",
+            textTransform: "uppercase",
+          }}
+        >
+          Harley Street Medical Wellness
         </div>
       </div>
     </AbsoluteFill>

@@ -36,7 +36,7 @@ The campaign is for the stage before an obvious gap: the audience is noticing ch
 - Format: 1080×1920, 30 fps, 9.5 seconds.
 - Hook: “NOT BALD.”
 - Reframe: “NOT TOO EARLY.”
-- Proof: real Harley Street Medics doctor and scalp-treatment footage.
+- Proof: real Harley Street Medical Wellness doctor and scalp-treatment footage.
 - Insight: “When the change is subtle, that may be the point.”
 - Evidence beat: authentic patient imagery, labelled with outcome and assessment disclaimers.
 - CTA: “Check the change before the gap. Start my hair analysis.”
@@ -48,7 +48,7 @@ Primary text:
 
 Headline: **Free 60-second hair analysis**
 
-Description: **Doctor-led options in London & Glasgow**
+Description: **Harley Street Medical Wellness · London & Glasgow**
 
 ## Retargeting creative sequence
 
@@ -96,3 +96,61 @@ Run one variable at a time:
 4. Cold master with authentic patient imagery vs the lower-risk clinic-only proof cut.
 
 Judge first on 3-second hold and 50% view rate, then landing-page-view rate, completed-analysis rate, qualified-booking rate, and cost per qualified booking. Do not scale a high-CTR creative if qualification falls.
+
+## Harley Street Medical Wellness live-copy refresh
+
+All variants use the `Learn More` CTA and the free hair-analysis destination.
+
+### V01 — Not Bald / Not Too Early
+
+Primary text:
+
+> Early hairline changes can be difficult to interpret. Harley Street Medical Wellness offers a free photographic pre-assessment that organises the visible pattern and helps identify whether a clinician consultation may be useful. Private, no obligation and around 60 seconds. Not a medical diagnosis. 18+.
+
+Headline: **Free 60-second hair analysis**
+Description: **One photo. A clearer next step.**
+
+### V02 — Conversion Story
+
+Primary text:
+
+> Treatment decisions should begin with an assessment. One clear photo can organise visible hairline and density patterns before a clinician discusses options such as PRP or exosome therapy, when appropriate. Start the free Harley Street Medical Wellness pre-assessment. Not a diagnosis; suitability is confirmed at consultation. 18+.
+
+Headline: **Clarity before treatment**
+Description: **Free photographic pre-assessment.**
+
+### V03 — Check The Change
+
+Primary text:
+
+> Hairline changes are often subtle. A private photo analysis can organise the visible signs and provide a clearer starting point for a clinician-led conversation. Free, no obligation and around 60 seconds. AI-assisted pre-assessment only. 18+.
+
+Headline: **Check the change in 60 seconds**
+Description: **A more informed first step.**
+
+### V04 — No Guesswork
+
+Primary text:
+
+> PRP and exosome therapy should not begin with guesswork. Harley Street Medical Wellness starts with a private photo pre-assessment, followed by a clinician discussion only when appropriate. Free, no obligation and around 60 seconds. Not a diagnosis; individual suitability varies. 18+.
+
+Headline: **Assessment before treatment**
+Description: **Explore appropriate next steps.**
+
+### V05 — Clarity First
+
+Primary text:
+
+> Before any treatment choice, clarity matters. One photo starts a private pre-assessment, then a clinician can discuss whether options such as PRP or exosome therapy are appropriate. Free, no obligation and around 60 seconds. Not a diagnosis; consultation is required. 18+.
+
+Headline: **Clarity comes first**
+Description: **Start the free hair analysis.**
+
+### V06 — Analysis How-To
+
+Primary text:
+
+> A useful analysis starts with a clear photo. Face natural light, hold the hair back and frame the hairline and the area being assessed. Harley Street Medical Wellness then organises the visible pattern and density to support a clearer clinician conversation. Free, private and around 60 seconds. AI-assisted pre-assessment only. 18+.
+
+Headline: **Take one clear photo**
+Description: **See what the analysis organises.**

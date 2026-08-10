@@ -21,7 +21,7 @@ export const ConversionCtaScene: React.FC = () => {
   return (
     <AbsoluteFill style={{backgroundColor: palette.black, overflow: "hidden"}}>
       <Img
-        src={staticFile("brand/clinic-reception.webp")}
+        src={staticFile("brand/wellness-clinic.webp")}
         style={{
           width: "100%",
           height: "100%",
@@ -70,7 +70,7 @@ export const ConversionCtaScene: React.FC = () => {
           boxShadow: "0 35px 120px rgba(0,0,0,.58)",
         }}
       >
-        <Img src={staticFile("brand/hsa-logo.png")} style={{width: 158, height: 158, objectFit: "contain"}} />
+        <Img src={staticFile("brand/hsw-logo.png")} style={{width: 158, height: 158, objectFit: "contain"}} />
         <div style={{fontFamily: sans, fontSize: 20, letterSpacing: 7, color: palette.goldLight, fontWeight: 700, textTransform: "uppercase", marginTop: 28}}>
           Free / private / around 60 seconds
         </div>
@@ -117,7 +117,7 @@ export const ConversionCtaScene: React.FC = () => {
           />
         </div>
         <div style={{fontFamily: sans, fontSize: 18, letterSpacing: 4, color: palette.muted, textTransform: "uppercase", marginTop: 36}}>
-          Harley Street Aesthetics / London &amp; Glasgow
+          Harley Street Medical Wellness / London &amp; Glasgow
         </div>
       </div>
     </AbsoluteFill>

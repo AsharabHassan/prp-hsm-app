@@ -35,6 +35,7 @@
     "render:15:guesswork": "remotion render HairAnalysis15NoGuesswork out/hair-analysis-15-no-guesswork.mp4 --codec=h264 --crf=16 --audio-codec=aac",
     "render:15:clarity": "remotion render HairAnalysis15ClarityFirst out/hair-analysis-15-clarity-first.mp4 --codec=h264 --crf=16 --audio-codec=aac",
     "render:15:howto": "remotion render HairAnalysis15HowItWorks out/hair-analysis-15-how-it-works.mp4 --codec=h264 --crf=16 --audio-codec=aac",
+    "render:app-scroll": "remotion render HairAnalysisReportScrollCapture public/source/app/hair-analysis-report-scroll.mp4 --codec=h264 --pixel-format=yuv420p --image-format=png --color-space=bt709 --crf=18 --muted",
     "voiceover": "node scripts/generate-voiceover.mjs",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"
