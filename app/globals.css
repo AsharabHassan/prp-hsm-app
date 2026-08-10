@@ -347,7 +347,7 @@ summary {
   width: 28rem;
 }
 
-/* Animated gold shine — ported from the HSA main site */
+/* Animated gold shine for the Harley Street Medical Wellness design system */
 .text-gradient-gold {
   background: linear-gradient(to right, #d4af37, #f4e4c1, #d4af37);
   background-size: 200% auto;

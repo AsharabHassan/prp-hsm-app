@@ -7,11 +7,12 @@ const nextConfig: NextConfig = {
   // Dev-only: allow phone testing via LAN IP and cloudflared tunnel.
   // Has no effect on production builds.
   allowedDevOrigins: ["192.168.0.103", "*.trycloudflare.com"],
+  devIndicators: false,
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images-strategyguys.netlify.app" },
       { protocol: "https", hostname: "i.ytimg.com" },
-      { protocol: "https", hostname: "harleystreetmedics.clinic" },
+      { protocol: "https", hostname: "harleystreetmedicalwellness.co.uk" },
     ],
   },
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import type { AnalysisResultT } from "@/lib/schema";
+import { BRAND_NAME } from "@/lib/brand";
 import { CALENDAR_URLS, CLINIC_INFO, type ClinicLocation } from "@/lib/webhooks";
 import ScoreGauge from "./ScoreGauge";
 import StageScale from "./StageScale";
@@ -232,7 +233,7 @@ export default function ReportView({
           medical diagnosis. Suitability for any treatment can only be
           confirmed at an in-person consultation with a GMC-registered
           clinician. Individual results vary and no outcome can be promised.
-          Harley Street Aesthetics · {clinic.address} · {clinic.phone}
+          {BRAND_NAME} · {clinic.address} · {clinic.phone}
         </p>
       </footer>
     </article>

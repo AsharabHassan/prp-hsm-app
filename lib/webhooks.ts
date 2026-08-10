@@ -1,4 +1,4 @@
-// GoHighLevel (LeadConnector) configuration — same pattern as the main HSA site.
+// GoHighLevel (LeadConnector) configuration for Harley Street Medical Wellness.
 // Fill the webhook IDs / calendar URLs in .env.local (see .env.example).
 
 export type ClinicLocation = "london" | "glasgow";
@@ -11,10 +11,14 @@ export function getWebhookUrl(location: ClinicLocation): string | null {
   return byLocation[location] || process.env.GHL_WEBHOOK_FALLBACK || null;
 }
 
-// Public (client-visible) booking calendar links, one per clinic.
+const WELLNESS_CALENDAR_URL =
+  process.env.NEXT_PUBLIC_GHL_CALENDAR_WELLNESS ||
+  "https://link.harleystreetmedicalwellness.co.uk/widget/bookings/wellness-consultant-1";
+
+// Public (client-visible) online consultation calendar shared by both clinics.
 export const CALENDAR_URLS: Record<ClinicLocation, string> = {
-  london: process.env.NEXT_PUBLIC_GHL_CALENDAR_LONDON || "",
-  glasgow: process.env.NEXT_PUBLIC_GHL_CALENDAR_GLASGOW || "",
+  london: WELLNESS_CALENDAR_URL,
+  glasgow: WELLNESS_CALENDAR_URL,
 };
 
 export const CLINIC_INFO: Record<
@@ -24,7 +28,7 @@ export const CLINIC_INFO: Record<
   london: {
     label: "London",
     address: "10 Harley Street, Marylebone, London W1G 9PF",
-    phone: "020 4628 3165",
+    phone: "020 4628 3137",
   },
   glasgow: {
     label: "Glasgow",

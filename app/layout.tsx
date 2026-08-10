@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import MetaPixel from "@/components/MetaPixel";
+import { BRAND_NAME, BRAND_WEBSITE } from "@/lib/brand";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -18,17 +19,19 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Free AI Hairline Analysis | Harley Street Aesthetics",
+  metadataBase: new URL("https://prp-app.harleystreetaesthetic.co.uk/"),
+  title: `Free AI Hairline Analysis | ${BRAND_NAME}`,
   description:
-    "Take one photo and receive a personalised hairline and hair-quality report from Harley Street Aesthetics. Discover whether PRP or exosome therapy suits your stage of hair thinning.",
+    `Take one photo and receive a personalised hairline and hair-quality report from ${BRAND_NAME}. Discover whether PRP or exosome therapy suits your stage of hair thinning.`,
+  alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Free AI Hairline Analysis | Harley Street Aesthetics",
+    title: `Free AI Hairline Analysis | ${BRAND_NAME}`,
     description:
       "One photo. A personalised report on your hairline, hair quality and whether PRP or exosome therapy suits you.",
-    images: [
-      "https://images-strategyguys.netlify.app/harleystreemedics-image-source-main/hsa%20logo.png",
-    ],
+    url: "/",
+    siteName: BRAND_NAME,
+    images: [`${BRAND_WEBSITE}assets/logo.png`],
   },
 };
 

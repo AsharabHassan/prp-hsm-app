@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { AnalysisResultT, ProfileT } from "@/lib/schema";
 import type { ClinicLocation } from "@/lib/webhooks";
+import { BRAND_NAME } from "@/lib/brand";
 
 export default function TeaserGate({
   analysis,
@@ -171,7 +172,7 @@ export default function TeaserGate({
             onChange={(e) => setConsent(e.target.checked)}
             className="mt-0.5 h-4 w-4 accent-[#d4af37]"
           />
-          I&apos;m happy for Harley Street Aesthetics to contact me about my
+          I&apos;m happy for {BRAND_NAME} to contact me about my
           results and suitable treatments.
         </label>
 

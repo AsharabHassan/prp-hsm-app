@@ -6,6 +6,7 @@ import FinancingStrip from "@/components/FinancingStrip";
 import Header from "@/components/Header";
 import ReviewsStrip from "@/components/ReviewsStrip";
 import VideoEmbed from "@/components/VideoEmbed";
+import { BRAND_NAME, BRAND_WEBSITE } from "@/lib/brand";
 
 const TRUST_CHIPS = ["GMC-registered doctors", "Private & secure", "No obligation"];
 
@@ -195,8 +196,8 @@ export default function LandingPage() {
           <div className="grid overflow-hidden rounded-[2rem] border border-white/[0.08] bg-black-soft lg:grid-cols-2">
             <div className="relative min-h-[340px] lg:min-h-[600px]">
               <Image
-                src="/brand/clinic-reception.webp"
-                alt="Harley Street Medics clinic reception"
+                src="/brand/wellness-clinic.webp"
+                alt="Harley Street Wellness clinic"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -231,7 +232,7 @@ export default function LandingPage() {
         <section className="section-space border-y border-white/[0.07] bg-[#090909]">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:gap-16">
             <div>
-              <VideoEmbed videoId="Droyoj-laXQ" title="Exosome hair therapy at Harley Street Medics" />
+              <VideoEmbed videoId="Droyoj-laXQ" title={`Exosome hair therapy at ${BRAND_NAME}`} />
               <p className="mt-4 text-center text-[10px] uppercase tracking-[0.16em] text-muted">Inside the clinic · Exosome hair therapy</p>
             </div>
             <div>
@@ -329,7 +330,12 @@ export default function LandingPage() {
         <footer className="border-t border-white/[0.07] px-5 pb-28 pt-10 sm:px-8 sm:pb-10">
           <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 text-xs leading-6 text-muted sm:flex-row">
             <div>
-              <p className="font-serif text-lg text-gold-light">Harley Street Aesthetics</p>
+              <a
+                href={BRAND_WEBSITE}
+                className="font-serif text-lg text-gold-light transition hover:text-gold"
+              >
+                {BRAND_NAME}
+              </a>
               <p className="mt-2">10 Harley Street, London W1G 9PF<br />227 Ingram Street, Glasgow G1 1DA</p>
             </div>
             <p className="max-w-xl sm:text-right">
